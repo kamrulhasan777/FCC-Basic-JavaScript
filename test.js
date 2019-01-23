@@ -61,12 +61,10 @@ myCar.model = "Mustang";
 
 console.log(myCar.make);
 
-
 // Numbers // 
 var number = 12; 
 
 number++;
-
 console.log(number++);
 console.log(number);
 
@@ -81,7 +79,6 @@ console.log(sentence);
 var fullName = "Mahade " + "hasan";
 
 console.log("My name is " + fullName);
-
 
 //Strings [bracket notation]
 
@@ -170,7 +167,6 @@ console.log(stringOne.toUpperCase());
 //20 trim()
 console.log(stringTwo.trim());
 
-
 /* Functions */
 
 var head = "Wearing a Red hat on head";
@@ -209,14 +205,148 @@ definedLater = "I am defined";
 
 console.log(definedLater);
 
-
 doSomethingElse();
 function doSomethingElse(){
     console.log("I did it!");
 }
 
-functionVar();
+/*functionVar();
 var functionVar = function(){
     console.log("I did it!"); //give an error
-}
+}*/
 
+// Null vs Undefined //
+
+var test 
+console.log(test);
+
+test = null;
+console.log(test);
+
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(null == undefined);
+console.log(null === undefined);
+console.log(1 + null);
+console.log(1 + undefined);
+
+// Short-Circuit Evaluation //
+
+var text = true;
+
+var isTrue = function(){
+    console.log('Text is true.');
+};
+
+var isFalse = function(){
+    console.log('Text is false.');
+};
+
+if(text){
+    isTrue();
+};
+(text && isTrue() );
+
+text = false;
+
+if(text){
+    isFalse();
+};
+(text || isFalse() );
+
+function newFullName(name){
+    name = name || "hasan"; 
+    console.log("My full name is " + name);
+};
+
+newFullName();
+newFullName('Mahade Hasan');
+
+// Ternary Operator //
+
+var age = 18;
+
+if (age >= 18){
+    console.log("You are an adult");
+}else{
+    console.log("You are a kid");
+};
+
+age = 15
+console.log( (age >= 18)? "You are an adult" : "You are a kid");
+
+var fristCheck = false,
+    secondCheck = false,
+    access = fristCheck ? "Access granted" : secondCheck ? "Access granted" : "Access denied";
+
+    console.log(access);
+
+// Switch Statement //
+
+let day;
+switch (new Date().getDay() ){
+    case 0:
+        day = "Sunday";
+            break;
+    case 1:
+        day = "Monday";
+            break;
+    case 2:
+        day = "Tuesday";
+            break;
+    case 3: 
+        day = "Wednesday";
+            break;
+    case 4:
+        day = "Thusday";
+            break;
+    case 5:
+        day = "Friday";
+            break;
+    case 6:
+        day = "Saturday";
+            break;
+};
+console.log(day);
+
+//10 Array Methods //
+
+var arr = ["a", "b", "c"];
+
+//01 push()
+arr.push("d");
+console.log(arr);
+
+//02 pop()
+console.log(arr.pop());
+console.log(arr);
+
+//03 concat()
+var arr2 = ["e","f"];
+console.log(arr.concat(arr2));
+
+//04 join()
+console.log(arr.join(""));
+
+//05 reverse()
+console.log(arr.reverse());
+
+//06 shift()
+console.log(arr.shift());
+console.log(arr);
+
+//07 unshift()
+console.log(arr.unshift("j"));
+console.log(arr);
+
+//08 slice()
+console.log(arr.slice(1,3));
+console.log(arr);
+
+//09 sort()
+arr.push("k", "p");
+console.log(arr);
+console.log(arr.sort());
+
+//10 splice()
+console.log(arr.splice(2,2));
