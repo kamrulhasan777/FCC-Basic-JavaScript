@@ -350,3 +350,84 @@ console.log(arr.sort());
 
 //10 splice()
 console.log(arr.splice(2,2));
+
+/* Copying Arrays */
+
+var original = [true, true, undefined, false, null];
+
+// slice 
+var copy1 = original.slice(0);
+
+// spread operator 
+var copy2 = [...original];
+console.log(copy1, copy2);
+
+// deep copying
+var deepArray = [["freeCodeCamp"]];
+var shallowCopy = deepArray.slice(0);
+
+shallowCopy[0].push('is great');
+console.log(deepArray[0], shallowCopy[0]);
+
+var deepCopy = JSON.parse(JSON.stringify(deepArray));
+
+deepCopy[0].push("is great");
+console.log(deepArray[0], deepCopy[0]);
+
+/* Random numbers & parseInt */
+
+console.log(Math.floor(Math.random() * 20));
+
+function randomRange(min, max){
+    return Math.floor(Math.random() * (max - min + 1 )) + min;
+}
+
+console.log(randomRange(1, 9));
+
+/* For Loops */
+var ourArray = [];
+for (var i = 0; i < 5; i++){
+    ourArray.push(i);
+}
+
+console.log(ourArray);
+
+var ourArray = [];
+for (var i = 0; i < 5; i++){
+    if(i > 2) break;
+    ourArray.push(i);
+}
+
+console.log(ourArray);
+
+var arr = [10, 9, 8, 7, 6];
+for (var i = 0; i < arr.length; i++){
+    console.log(arr[i]);
+};
+
+var arr = [
+    [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++){
+    for (var j=0; j < arr[i].length; j++){
+        console.log(arr[i][j]);
+    }
+};
+
+/* While & Do while Loop */
+
+var n = 0;
+
+while (n < 5){
+    n++;
+
+    if (n==3) continue;
+    console.log("n = " + n);
+}
+
+var i = 0;
+
+do{
+    i++;
+    console.log("i = " + i);
+} while (i < 5);
